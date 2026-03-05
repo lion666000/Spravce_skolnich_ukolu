@@ -11,19 +11,16 @@
     </padding>
    <MenuBar>
      <menus>
-       <Menu mnemonicParsing="false" text="File">
+       <Menu mnemonicParsing="false" text="Soubor">
          <items>
-           <MenuItem mnemonicParsing="false" text="Close" />
+           <MenuItem mnemonicParsing="false" onAction="#handleEnd" text="Konec" />
          </items>
        </Menu>
-       <Menu mnemonicParsing="false" text="Edit">
+       <Menu mnemonicParsing="false" text="Zobrazit">
          <items>
-           <MenuItem mnemonicParsing="false" text="Delete" />
-         </items>
-       </Menu>
-       <Menu mnemonicParsing="false" text="Help">
-         <items>
-           <MenuItem mnemonicParsing="false" text="About" />
+           <MenuItem mnemonicParsing="false" onAction="#handleShowAll" text="Vše" />
+               <MenuItem mnemonicParsing="false" onAction="#handleShowCompleted" text="Pouze splněné" />
+               <MenuItem mnemonicParsing="false" onAction="#handleShowUnfinished" text="Pouze nesplněné" />
          </items>
        </Menu>
      </menus>
@@ -64,8 +61,9 @@
          <RadioButton fx:id="highPriority" mnemonicParsing="false" text="Vysoká" toggleGroup="$priority" />
       </children>
    </HBox>
-   <CheckBox fx:id="finishedCheckbox" mnemonicParsing="false" text="Splněno" />
+   <CheckBox fx:id="finishedCheckBox" mnemonicParsing="false" text="Splněno" />
     <Button onAction="#handlePridatUkol" text="Přidat úkol" />
    <ListView fx:id="ukolyListView" prefHeight="200.0" prefWidth="200.0" />
+   <Button mnemonicParsing="false" onAction="#handleShowDetail" text="Zobrazit info" />
    <Label fx:id="detailLabel" text="Detail" />
 </VBox>
