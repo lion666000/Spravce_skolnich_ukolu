@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="609.0" prefWidth="416.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ukoly.HlavniController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" />
+    </padding>
+   <MenuBar>
+     <menus>
+       <Menu mnemonicParsing="false" text="File">
+         <items>
+           <MenuItem mnemonicParsing="false" text="Close" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Edit">
+         <items>
+           <MenuItem mnemonicParsing="false" text="Delete" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Help">
+         <items>
+           <MenuItem mnemonicParsing="false" text="About" />
+         </items>
+       </Menu>
+     </menus>
+   </MenuBar>
+
+    <Label fx:id="welcomeText" text="Správce školních úkolů">
+      <font>
+         <Font name="JetBrains Mono Regular" size="20.0" />
+      </font></Label>
+   <TextField fx:id="nazevTextField" promptText="Zadej název úkolu" />
+   <Label text="Předmět">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Label>
+   <HBox alignment="TOP_CENTER" prefHeight="26.0" prefWidth="354.0" spacing="10.0">
+      <children>
+         <RadioButton fx:id="ajRadio" mnemonicParsing="false" text="AJ">
+            <toggleGroup>
+               <ToggleGroup fx:id="subject" />
+            </toggleGroup></RadioButton>
+         <RadioButton fx:id="cjRadio" mnemonicParsing="false" text="CJ" toggleGroup="$subject" />
+         <RadioButton fx:id="prgRadio" mnemonicParsing="false" text="PRG" toggleGroup="$subject" />
+         <RadioButton fx:id="matRadio" layoutX="184.0" layoutY="10.0" mnemonicParsing="false" text="MAT" toggleGroup="$subject" />
+         <RadioButton fx:id="hwRadio" layoutX="271.0" layoutY="10.0" mnemonicParsing="false" text="HW" toggleGroup="$subject" />
+      </children>
+   </HBox>
+   <Label text="Priorita">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Label>
+   <HBox alignment="TOP_CENTER" prefHeight="30.0" prefWidth="354.0" spacing="10.0">
+      <children>
+         <RadioButton fx:id="lowPriority" mnemonicParsing="false" text="Nízká">
+            <toggleGroup>
+               <ToggleGroup fx:id="priority" />
+            </toggleGroup></RadioButton>
+         <RadioButton fx:id="midPriority" mnemonicParsing="false" text="Střední" toggleGroup="$priority" />
+         <RadioButton fx:id="highPriority" mnemonicParsing="false" text="Vysoká" toggleGroup="$priority" />
+      </children>
+   </HBox>
+   <CheckBox fx:id="finishedCheckbox" mnemonicParsing="false" text="Splněno" />
+    <Button onAction="#handlePridatUkol" text="Přidat úkol" />
+   <ListView fx:id="ukolyListView" prefHeight="200.0" prefWidth="200.0" />
+   <Label fx:id="detailLabel" text="Detail" />
+</VBox>
