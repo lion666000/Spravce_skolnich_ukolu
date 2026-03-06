@@ -14,6 +14,8 @@
        <Menu mnemonicParsing="false" text="Soubor">
          <items>
            <MenuItem mnemonicParsing="false" onAction="#handleEnd" text="Konec" />
+               <MenuItem mnemonicParsing="false" onAction="#handleSave" text="Uložit" />
+               <MenuItem mnemonicParsing="false" onAction="#handleLoad" text="Načíst" />
          </items>
        </Menu>
        <Menu mnemonicParsing="false" text="Zobrazit">
@@ -23,6 +25,10 @@
                <MenuItem mnemonicParsing="false" onAction="#handleShowUnfinished" text="Pouze nesplněné" />
          </items>
        </Menu>
+         <Menu mnemonicParsing="false" text="Nápověda">
+            <items>
+               <MenuItem mnemonicParsing="false" onAction="#showInfo" text="Tutorial" />
+            </items></Menu>
      </menus>
    </MenuBar>
 
@@ -63,7 +69,13 @@
    </HBox>
    <CheckBox fx:id="finishedCheckBox" mnemonicParsing="false" text="Splněno" />
     <Button onAction="#handlePridatUkol" text="Přidat úkol" />
-   <ListView fx:id="ukolyListView" prefHeight="200.0" prefWidth="200.0" />
-   <Button mnemonicParsing="false" onAction="#handleShowDetail" text="Zobrazit info" />
+   <ListView fx:id="ukolyListView" onMouseClicked="#handleSelected" prefHeight="200.0" prefWidth="200.0" />
+   <Button fx:id="infoButton" mnemonicParsing="false" onAction="#handleShowDetail" text="Zobrazit info" />
+   <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+      <children>
+         <Button fx:id="upravitButton" mnemonicParsing="false" onAction="#handleChange" text="Upravit" />
+         <Button fx:id="smazatButton" mnemonicParsing="false" onAction="#handleDelete" text="Smazat" />
+      </children>
+   </HBox>
    <Label fx:id="detailLabel" text="Detail" />
 </VBox>

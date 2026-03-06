@@ -1,0 +1,2 @@
+e;AJ;Střední;true
+f;MAT;Vysoká;false
